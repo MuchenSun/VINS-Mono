@@ -29,6 +29,7 @@ class FeatureTracker
 {
   public:
     FeatureTracker();
+    ~FeatureTracker();
 
     void readImage(const cv::Mat &_img,double _cur_time);
 
@@ -62,4 +63,6 @@ class FeatureTracker
     double prev_time;
 
     static int n_id;
+
+    std::ofstream datafile;
 };

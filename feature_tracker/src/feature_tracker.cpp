@@ -31,6 +31,13 @@ void reduceVector(vector<int> &v, vector<uchar> status)
 
 FeatureTracker::FeatureTracker()
 {
+    datafile.open("/home/msun/data.csv", ios::app);
+    datafile << "frame, time, landmark, coord_x, coord_y, orientation_x, orientation_y, orientation_z, orientation_w, angular_vel_x, angular_vel_y, angular_vel_z, linear_acc_x, linear_acc_y, linear_acc_z" << "\n";
+}
+
+FeatureTracker::~FeatureTracker()
+{
+    datafile.close();
 }
 
 void FeatureTracker::setMask()

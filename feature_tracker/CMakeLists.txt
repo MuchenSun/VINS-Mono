@@ -9,9 +9,9 @@ find_package(catkin REQUIRED COMPONENTS
     roscpp
     std_msgs
     sensor_msgs
+    message_filters
     cv_bridge
-    camera_model
-    )
+    camera_model)
 
 find_package(OpenCV REQUIRED)
 
