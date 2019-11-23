@@ -1,5 +1,6 @@
 #include "parameters.h"
 
+std::string DATA_PATH;
 std::string IMAGE_TOPIC;
 std::string IMU_TOPIC;
 std::vector<std::string> CAM_NAMES;
@@ -36,6 +37,10 @@ T readParam(ros::NodeHandle &n, std::string name)
 
 void readParameters(ros::NodeHandle &n)
 {
+    std::string data_path;
+    data_path = readParam<std::string>(n, "data_path");
+    DATA_PATH = data_path + "feature_data.csv";
+
     std::string config_file;
     config_file = readParam<std::string>(n, "config_file");
     cv::FileStorage fsSettings(config_file, cv::FileStorage::READ);
